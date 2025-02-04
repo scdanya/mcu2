@@ -3,6 +3,20 @@ host = 0.0.0.0
 port = 7125
 klippy_uds_address = /home/raspberry1/printer_data/comms/klippy.sock
 
+[update_manager voron-klipper-extensions]
+type = git_repo
+path = ~/voron-klipper-extensions
+origin = https://github.com/voidtrance/voron-klipper-extensions.git
+install_script = install-extensions.sh
+managed_services = klipper
+
+[update_manager macro_power_pack]
+type = git_repo
+path = ~/klipper-macro-power-pack
+origin = https://github.com/vertexbz/klipper-macro-power-pack.git
+primary_branch = master
+is_system_service = False
+
 [authorization]
 trusted_clients = 
 	192.168.0.0/16
@@ -34,4 +48,11 @@ path = /home/raspberry1/mainsail
 repo = mainsail-crew/mainsail
 channel = stable
 type = web
+
+[update_manager mainsail-config]
+managed_services = klipper
+origin = https://github.com/mainsail-crew/mainsail-config.git
+path = /home/raspberry1/mainsail-config
+primary_branch = master
+type = git_repo
 
