@@ -56,3 +56,11 @@ path = /home/raspberry1/mainsail-config
 primary_branch = master
 type = git_repo
 
+[update_manager moonraker-telegram-bot]
+install_script = scripts/install.sh
+requirements = scripts/requirements.txt
+env = /home/raspberry1/moonraker-telegram-bot-env/bin/python
+origin = https://github.com/nlef/moonraker-telegram-bot.git
+path = /home/raspberry1/moonraker-telegram-bot
+type = git_repo
+
